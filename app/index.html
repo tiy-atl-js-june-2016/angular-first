@@ -9,13 +9,15 @@
   </head>
   <body ng-app="app">
     <div class="container" ng-controller="MainController">
-      <p>{{ greeting }}</p>
-
-      <input type="text" ng-model="person.name" placeholder="Name">
-      <input type="text" ng-model="person.age" placeholder="Age">
-      <input type="text" ng-model="person.location" placeholder="Location">
-      <p>{{ person }}</p>
+        <form ng-submit="addTodoItem(newtask)">
+          <input type="text" placeholder="Enter Todo Item" ng-model="newtask">
+        </form>
+        <hr>
+        <ul class="todolist">
+          <li ng-repeat="t in tasks" data-id="{{ t.id }}">{{ t.name }}</li>
+        </ul>
     </div>
     <script src="js/bundle.js"></script>
   </body>
 </html>
+
