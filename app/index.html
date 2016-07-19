@@ -7,9 +7,14 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
-  <body>
-    <div class="container">
-      <p>Welcome to your life.</p>
+  <body ng-app="app">
+    <div class="container" ng-controller="MainController">
+      <p>{{ greeting }}</p>
+
+      <input type="text" ng-model="person.name" placeholder="Name">
+      <input type="text" ng-model="person.age" placeholder="Age">
+      <input type="text" ng-model="person.location" placeholder="Location">
+      <p>{{ person }}</p>
     </div>
     <script src="js/bundle.js"></script>
   </body>
